@@ -20,3 +20,9 @@ export const BG_URL =
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMjc4YTEwMzdiNzlmYTJlZDQ3OWI2YzVlZDc5MTVhYSIsIm5iZiI6MTc0ODU4ODM4Ni4yNjIsInN1YiI6IjY4Mzk1NzYyZjA0ZjY0OTNkYjk2OGU3MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FCgAcZExF3058PqIXci9nX8s-XTDeX7SWH6AhgD1XU4",
     },
   };
+
+ export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "spanish", name: "Spanish" },
+];

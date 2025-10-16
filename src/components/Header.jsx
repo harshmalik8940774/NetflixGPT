@@ -5,7 +5,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { USER_AVATAR ,SUPPORTED_LANGUAGES} from "../utils/constants";
-import { toggleGptSearchView } from "../utils/gptSlice";
+import { toggleGptSearchView ,clearGptMovieResult} from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
 
@@ -55,12 +55,21 @@ const Header = () => {
 
     dispatch(toggleGptSearchView());
 
+
+      if (showGptSearch) {
+    // User is currently in GPT Search mode and going back to Homepage
+    dispatch(clearGptMovieResult());
+  }
+
+
+
   };
   const handleLanguageChange = (e) => {
 
     dispatch(changeLanguage(e.target.value));
   }
 
+  
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between items-center">
       <img
@@ -77,8 +86,11 @@ const Header = () => {
                 {lang.name}
               </option>
             ))}
+
+          
+        
           </select>)}
-          <button className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg" onClick={handleGptSearchClick}>GPT Search</button>
+          <button className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg" onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "GPT Search"}</button>
           <img
             className="w-16 h-16 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
             alt="usericon"

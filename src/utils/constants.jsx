@@ -16,8 +16,7 @@ export const BG_URL =
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMjc4YTEwMzdiNzlmYTJlZDQ3OWI2YzVlZDc5MTVhYSIsIm5iZiI6MTc0ODU4ODM4Ni4yNjIsInN1YiI6IjY4Mzk1NzYyZjA0ZjY0OTNkYjk2OGU3MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FCgAcZExF3058PqIXci9nX8s-XTDeX7SWH6AhgD1XU4",
+       Authorization: "Bearer " + import.meta.env.VITE_TMDB_KEY,
     },
   };
 
@@ -26,3 +25,5 @@ export const BG_URL =
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+export const OPENAI_KEY = import.meta.env.VITE_OPENAI_KEY;

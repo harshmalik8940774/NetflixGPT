@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import Header from "./Header";
-import { checkValidData } from "../utils/validate";
+import { checkValidData } from "../utils/Validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
